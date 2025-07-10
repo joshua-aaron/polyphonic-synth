@@ -5,37 +5,53 @@
               pluginFormats="buildAU,buildVST3" pluginVST3Category="Synth">
   <MAINGROUP id="fQfEWM" name="midiSynthPlugin">
     <GROUP id="{2D950829-A2D0-BFFA-4956-47039FA82E26}" name="Source">
-      <FILE id="CJEfPy" name="ParameterIds.h" compile="0" resource="0" file="Source/ParameterIds.h"/>
-      <FILE id="pqjdet" name="SliderWithLabel.cpp" compile="1" resource="0"
-            file="Source/SliderWithLabel.cpp"/>
-      <FILE id="A32h73" name="SliderWithLabel.h" compile="0" resource="0"
-            file="Source/SliderWithLabel.h"/>
-      <FILE id="zWvVFW" name="SynthesiserSound.h" compile="0" resource="0"
-            file="Source/SynthesiserSound.h"/>
-      <FILE id="SLnUui" name="EngineUtils.h" compile="0" resource="0" file="Source/EngineUtils.h"/>
-      <FILE id="E1q8uk" name="VoiceWrapper.cpp" compile="1" resource="0"
-            file="Source/VoiceWrapper.cpp"/>
-      <FILE id="chjddq" name="VoiceWrapper.h" compile="0" resource="0" file="Source/VoiceWrapper.h"/>
-      <FILE id="Xtt4Wx" name="MidiUtils.cpp" compile="1" resource="0" file="Source/MidiUtils.cpp"/>
-      <FILE id="V0dUer" name="MidiUtils.h" compile="0" resource="0" file="Source/MidiUtils.h"/>
-      <FILE id="UXqWHN" name="OscillatorUtils.h" compile="0" resource="0"
-            file="Source/OscillatorUtils.h"/>
-      <FILE id="anHMDD" name="GainUtils.h" compile="0" resource="0" file="Source/GainUtils.h"/>
-      <FILE id="u1CY9E" name="Gain.cpp" compile="1" resource="0" file="Source/Gain.cpp"/>
-      <FILE id="NGHGNw" name="Gain.h" compile="0" resource="0" file="Source/Gain.h"/>
-      <FILE id="YhXEQ3" name="Oscillator.cpp" compile="1" resource="0" file="Source/Oscillator.cpp"/>
-      <FILE id="AlmkWW" name="Oscillator.h" compile="0" resource="0" file="Source/Oscillator.h"/>
-      <FILE id="wLFJN5" name="SynthEngine.cpp" compile="1" resource="0" file="Source/SynthEngine.cpp"/>
-      <FILE id="CAj6fM" name="SynthEngine.h" compile="0" resource="0" file="Source/SynthEngine.h"/>
-      <FILE id="WYJpKN" name="Voice.cpp" compile="1" resource="0" file="Source/Voice.cpp"/>
-      <FILE id="Idb5TX" name="Voice.h" compile="0" resource="0" file="Source/Voice.h"/>
-      <FILE id="MXlRli" name="PluginProcessor.cpp" compile="1" resource="0"
-            file="Source/PluginProcessor.cpp"/>
-      <FILE id="zkKVvc" name="PluginProcessor.h" compile="0" resource="0"
-            file="Source/PluginProcessor.h"/>
-      <FILE id="BJn6o4" name="PluginEditor.cpp" compile="1" resource="0"
-            file="Source/PluginEditor.cpp"/>
-      <FILE id="I9nhPJ" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+      <GROUP id="{B45D7B08-3A21-BE10-112B-76A3EFDDF740}" name="Midi">
+        <FILE id="Xtt4Wx" name="MidiUtils.cpp" compile="1" resource="0" file="Source/MidiUtils.cpp"/>
+        <FILE id="V0dUer" name="MidiUtils.h" compile="0" resource="0" file="Source/MidiUtils.h"/>
+      </GROUP>
+      <GROUP id="{2C8BE930-124A-5A9D-4D5E-6F168BE1F80D}" name="GUI">
+        <FILE id="BJn6o4" name="PluginEditor.cpp" compile="1" resource="0"
+              file="Source/PluginEditor.cpp"/>
+        <FILE id="I9nhPJ" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+        <FILE id="CJEfPy" name="ParameterIds.h" compile="0" resource="0" file="Source/ParameterIds.h"/>
+        <GROUP id="{F0D2CF96-F3A4-71E6-347C-CC3BB76370E2}" name="SliderWithLabel">
+          <FILE id="pqjdet" name="SliderWithLabel.cpp" compile="1" resource="0"
+                file="Source/SliderWithLabel.cpp"/>
+          <FILE id="A32h73" name="SliderWithLabel.h" compile="0" resource="0"
+                file="Source/SliderWithLabel.h"/>
+        </GROUP>
+      </GROUP>
+      <GROUP id="{33B64C06-CC7F-05E0-3B10-6F9F7D8D5E80}" name="Processor">
+        <FILE id="MXlRli" name="PluginProcessor.cpp" compile="1" resource="0"
+              file="Source/PluginProcessor.cpp"/>
+        <FILE id="zkKVvc" name="PluginProcessor.h" compile="0" resource="0"
+              file="Source/PluginProcessor.h"/>
+      </GROUP>
+      <GROUP id="{CFA3E423-5FA4-1CC6-592B-B26C674B203C}" name="Engine">
+        <FILE id="zWvVFW" name="SynthesiserSound.h" compile="0" resource="0"
+              file="Source/SynthesiserSound.h"/>
+        <FILE id="SLnUui" name="EngineUtils.h" compile="0" resource="0" file="Source/EngineUtils.h"/>
+        <FILE id="wLFJN5" name="SynthEngine.cpp" compile="1" resource="0" file="Source/SynthEngine.cpp"/>
+        <FILE id="CAj6fM" name="SynthEngine.h" compile="0" resource="0" file="Source/SynthEngine.h"/>
+      </GROUP>
+      <GROUP id="{9952E0B5-8E9E-F158-C341-42908BF4CEC5}" name="Voice">
+        <FILE id="WYJpKN" name="Voice.cpp" compile="1" resource="0" file="Source/Voice.cpp"/>
+        <FILE id="Idb5TX" name="Voice.h" compile="0" resource="0" file="Source/Voice.h"/>
+        <FILE id="E1q8uk" name="VoiceWrapper.cpp" compile="1" resource="0"
+              file="Source/VoiceWrapper.cpp"/>
+        <FILE id="chjddq" name="VoiceWrapper.h" compile="0" resource="0" file="Source/VoiceWrapper.h"/>
+      </GROUP>
+      <GROUP id="{C8E0599D-5E90-B4B9-C496-BC6F985DDF88}" name="Gain">
+        <FILE id="anHMDD" name="GainUtils.h" compile="0" resource="0" file="Source/GainUtils.h"/>
+        <FILE id="u1CY9E" name="Gain.cpp" compile="1" resource="0" file="Source/Gain.cpp"/>
+        <FILE id="NGHGNw" name="Gain.h" compile="0" resource="0" file="Source/Gain.h"/>
+      </GROUP>
+      <GROUP id="{2EAC6CA9-E8A5-BE77-DB92-40F9926F4A21}" name="Oscillator">
+        <FILE id="UXqWHN" name="OscillatorUtils.h" compile="0" resource="0"
+              file="Source/OscillatorUtils.h"/>
+        <FILE id="YhXEQ3" name="Oscillator.cpp" compile="1" resource="0" file="Source/Oscillator.cpp"/>
+        <FILE id="AlmkWW" name="Oscillator.h" compile="0" resource="0" file="Source/Oscillator.h"/>
+      </GROUP>
     </GROUP>
   </MAINGROUP>
   <MODULES>
