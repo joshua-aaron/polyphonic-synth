@@ -10,8 +10,8 @@
 
 #pragma once
 #include <JuceHeader.h>
-#include "EngineUtils.h"
-#include "VoiceWrapper.h"
+#include "../Utils/EngineUtils.h"
+#include "../Voice/VoiceWrapper.h"
 
 class SynthEngine {
     public:

@@ -6,9 +6,9 @@
   ==============================================================================
 */
 
-#include "PluginProcessor.h"
+#include "../../PluginProcessor/PluginProcessor.h"
 #include "PluginEditor.h"
-#include "ParameterIds.h"
+#include "../../Constants/ParameterIds.h"
 
 //==============================================================================
 PluginEditor::PluginEditor(PluginProcessor& p)

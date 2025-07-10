@@ -10,8 +10,8 @@
 
 #include <JuceHeader.h>
 #include <juce_gui_extra/juce_gui_extra.h> // ensure this is included if needed
-#include "PluginProcessor.h"
-#include "SliderWithLabel.h"
+#include "../../PluginProcessor/PluginProcessor.h"
+#include "../SliderWithLabel/SliderWithLabel.h"
 
 using ComboBoxAttachment = juce::AudioProcessorValueTreeState::ComboBoxAttachment;
 using SliderAttachment   = juce::AudioProcessorValueTreeState::SliderAttachment;

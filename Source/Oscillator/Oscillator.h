@@ -10,7 +10,7 @@
 
 #pragma once
 #include <JuceHeader.h>
-#include "OscillatorUtils.h"
+#include "../Utils/OscillatorUtils.h"
 
 class Oscillator {
 public:

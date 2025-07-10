@@ -9,7 +9,7 @@
 */
 
 #include "Oscillator.h"
-#include "OscillatorUtils.h"
+#include "../Utils/OscillatorUtils.h"
 #include <JuceHeader.h>
 
 //==============================================================================

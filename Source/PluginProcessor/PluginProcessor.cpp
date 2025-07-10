@@ -7,8 +7,8 @@
 */
 
 #include "PluginProcessor.h"
-#include "PluginEditor.h"
-#include "ParameterIds.h"
+#include "../GUI/PluginEditor/PluginEditor.h"
+#include "../Constants/ParameterIds.h"
 
 //==============================================================================
 PluginProcessor::PluginProcessor()

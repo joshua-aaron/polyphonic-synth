@@ -9,7 +9,7 @@
 */
 
 #include "Gain.h"
-#include "GainUtils.h"
+#include "../Utils/GainUtils.h"
 #include <JuceHeader.h>
 
 Gain::Gain() = default;

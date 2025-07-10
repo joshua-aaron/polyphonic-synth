@@ -9,8 +9,8 @@
 */
 
 #include "SynthEngine.h"
-#include "SynthesiserSound.h"
-#include "VoiceWrapper.h"
+#include "../SynthesiserSound.h"
+#include "../Voice/VoiceWrapper.h"
 #include <JuceHeader.h>
 
 SynthEngine::SynthEngine()
@@ -93,7 +93,7 @@ void SynthEngine::handleMidi(const juce::MidiBuffer &midiBuffer)
     for (const auto metadata : midiBuffer)
     {
         const auto msg = metadata.getMessage();
-        const auto time = metadata.samplePosition;
+        //const auto time = metadata.samplePosition;
         if (msg.isNoteOn())
         {
             const int midiNote = msg.getNoteNumber();

@@ -9,8 +9,8 @@
 */
 
 #include <JuceHeader.h>
-#include "MidiUtils.h"
-#include "Oscillator.h"
+#include "../Utils/MidiUtils.h"
+#include "../Oscillator/Oscillator.h"
 #include "Voice.h"
 
 // Constructors

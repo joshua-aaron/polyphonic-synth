@@ -11,9 +11,9 @@
 #pragma once
 #include <string>
 #include <JuceHeader.h>
-#include "Oscillator.h"
-#include "OscillatorUtils.h"
-#include "Gain.h"
+#include "../Oscillator/Oscillator.h"
+#include "../Utils/OscillatorUtils.h"
+#include "../Gain/Gain.h"
 
 class Voice
 {

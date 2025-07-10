@@ -11,7 +11,7 @@
 #pragma once
 #include <JuceHeader.h>
 #include "Voice.h"
-#include "SynthesiserSound.h"
+#include "../SynthesiserSound.h"
 
 class VoiceWrapper : public juce::SynthesiserVoice
 {
