@@ -160,7 +160,6 @@ void Voice::startNote(int midiNote, float velocity)
     
     setOscillatorGains(gainA, gainB, gainSub);
     _active = true;
-    DBG("_midiNote set to: " << _midiNote);
 }
 
 void Voice::stopNote(float /* velocity */, bool allowTailOff)
