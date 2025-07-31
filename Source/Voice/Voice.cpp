@@ -160,6 +160,7 @@ void Voice::startNote(int midiNote, float velocity)
     
     setOscillatorGains(gainA, gainB, gainSub);
     _active = true;
+    DBG("_midiNote set to: " << _midiNote);
 }
 
 void Voice::stopNote(float /* velocity */, bool allowTailOff)
@@ -171,20 +172,22 @@ void Voice::stopNote(float /* velocity */, bool allowTailOff)
     else
     {
         prepareForReuse(); // Kill the voice
+        resetEnvelopes();
     }
 }
 
 
 void Voice::renderNextSample(float& outputSample)
 {
-    if (_amplitudeEnvelope.isActive())
+    _lastAmplitudeEnvSample = _amplitudeEnvelope.getNextSample();
+    if (_lastAmplitudeEnvSample > 0.0001f)
     {
-        _lastAmplitudeEnvSample = _amplitudeEnvelope.getNextSample();
         outputSample = getNextSampleSummed() * _lastAmplitudeEnvSample;
     }
     else
     {
         prepareForReuse();
+        outputSample = 0.0f;
         return;
     }
     
@@ -214,7 +217,6 @@ void Voice::prepareForReuse()
     _lastAmplitudeEnvSample = 0.0f;
     _lastModulationEnvSample = 0.0f;
     
-    resetEnvelopes();
     setOscillatorGains(0.0f, 0.0f, 0.0f);
 }
 
