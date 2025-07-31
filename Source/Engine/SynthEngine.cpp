@@ -86,6 +86,8 @@ void SynthEngine::setPlayMode(EngineUtils::PlayMode mode)
     {
         _voicePool[i].stopNote(0.0f, false);
     }
+    
+    _activeNotes.clear();
 }
 
 void SynthEngine::handleMidi(const juce::MidiBuffer &midiBuffer)
@@ -94,10 +96,16 @@ void SynthEngine::handleMidi(const juce::MidiBuffer &midiBuffer)
     {
         const auto msg = metadata.getMessage();
         //const auto time = metadata.samplePosition;
-        if (msg.isNoteOn())
+        
+        if (msg.isNoteOn() && msg.getVelocity() > 0.0f)
         {
             const int midiNote = msg.getNoteNumber();
             const float velocity = msg.getVelocity();
+            
+            // Note is already being played
+            if (_activeNotes.find(midiNote) != _activeNotes.end()) {
+                continue;
+            }
             
             // Get next free voice or steal one
             for (auto i = 0; i < _numVoices; ++i)
@@ -106,19 +114,26 @@ void SynthEngine::handleMidi(const juce::MidiBuffer &midiBuffer)
                 {
                     // TODO: Take current pitch wheel position into account
                     _voicePool[i].startNote(midiNote, velocity, nullptr, _pitchWheelValue);
+                    _activeNotes.insert({midiNote, i});
                     break;
                 }
             }
         }
-        else if (msg.isNoteOff())
+        else if (msg.isNoteOff() || (msg.isNoteOn() && msg.getVelocity() == 0.0f))
         {
             const int midiNote = msg.getNoteNumber();
-            
             for (auto i = 0; i < _numVoices; ++i)
             {
                 if (_voicePool[i].isVoiceActive() && _voicePool[i].getCurrentlyPlayingNote() == midiNote)
                 {
                     _voicePool[i].stopNote(0.0f, true);
+                    auto it = _activeNotes.find(midiNote);
+                    if (it != _activeNotes.end())
+                    {
+                        _activeNotes.erase(it);
+                    }
+                    
+                    break;
                 }
             }
         }
@@ -187,6 +202,7 @@ void SynthEngine::reset()
     _pitchWheelValue = 0.0f;
     _playModeChangeRequested.store(false, std::memory_order_release);
     _requestedPlayMode = _playMode;
+    _activeNotes.clear();
 }
 
 OscillatorUtils::WaveType SynthEngine::getOscillatorAType() const { return _voicePool[0].getOscillatorAType(); }
