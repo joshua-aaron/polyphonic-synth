@@ -27,6 +27,7 @@ void VoiceWrapper::startNote(int midiNoteNumber, float velocity,
 {
     auto normalizedOffset = std::clamp((currentPitchWheelPosition - 8192) / 8192.0f, -1.0f, 1.0f);
     _voice.setPitchBend(normalizedOffset);
+    DBG("Calling startNote() from VoiceWrapper's startNote() with midi note: " << midiNoteNumber);
     _voice.startNote(midiNoteNumber, velocity);
 }
 
@@ -88,7 +89,7 @@ void VoiceWrapper::setPitchBendRange(float semitones)
     _voice.setPitchBendRange(semitones);
 }
 
-int VoiceWrapper::getCurrentPlayingNote() const
+int VoiceWrapper::getCurrentlyPlayingNote() const
 {
     return _voice.getMidiNote();
 }

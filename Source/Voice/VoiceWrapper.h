@@ -35,7 +35,7 @@ public:
     void prepareToPlay(double sampleRate, int samplesPerBlock, int outputChannels);
     void setPitchBendRange(float semitones);
     
-    int getCurrentPlayingNote() const;
+    int getCurrentlyPlayingNote() const;
     bool isVoiceActive() const override;
     
     OscillatorUtils::WaveType getOscillatorAType() const;
