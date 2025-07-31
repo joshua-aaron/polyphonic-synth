@@ -58,6 +58,8 @@ private:
     static constexpr int _maxVoices = 8;
     VoiceWrapper _voicePool[_maxVoices];
     int _numVoices = 8;
+    std::unordered_map<int, int> _activeNotes; // key = midi note, value = voice pool index
+
     float _pitchBendRange = 2.0f;
     float _pitchWheelValue = 0.0f;
     int _numChannels = 2;
