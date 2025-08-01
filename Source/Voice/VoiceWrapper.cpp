@@ -88,7 +88,7 @@ void VoiceWrapper::setPitchBendRange(float semitones)
     _voice.setPitchBendRange(semitones);
 }
 
-int VoiceWrapper::getCurrentPlayingNote() const
+int VoiceWrapper::getCurrentlyPlayingNote() const
 {
     return _voice.getMidiNote();
 }
